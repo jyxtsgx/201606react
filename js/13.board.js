@@ -6,7 +6,8 @@ var Board = React.createClass({
     },
     leaveMsg(){
         var value = this.refs.txtMsg.value;
-        this.state.messages.push(<li className="list-group-item">{value}</li>);
+        var li = <li className="list-group-item" key={this.state.messages.length}>{value}</li>;
+        this.state.messages.push(li);
         this.setState({messages:this.state.messages});
         this.refs.txtMsg.value = '';
     },
