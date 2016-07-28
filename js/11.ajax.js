@@ -13,12 +13,14 @@ var Suggestion = React.createClass({
             url+=((/\?/.test(url)?'&':'?')+query);
         }
         url += ('_='+Date.now());
+        var callbackMethod = 'jQuery.'+Date.now();
         if(options.jsonp){
-            url+=('&'+options.jsonp+'=show');
+            url+=('&'+options.jsonp+'='+callbackMethod);
         }
         if(options.context){
             options.success = options.success.bind(options.context);
         }
+        window[callbackMethod] =  options.success;
         var xhr = new XMLHttpRequest;
         xhr.open(options.method,url,true);
         xhr.onreadystatechange = function(){
@@ -31,7 +33,7 @@ var Suggestion = React.createClass({
                     res = res[1];
                     result = JSON.parse(res);
                 }
-                options.success(result);
+                window[callbackMethod](result);
             }
         }
         xhr.send();
