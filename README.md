@@ -6,3 +6,7 @@ var props = {
     gender:'男',
     age:18
 }
+
+
+剪贴板事件 onKeyDown onKeyPress onKeyUp
+键盘事件 onFocus onBlur

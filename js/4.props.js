@@ -20,12 +20,13 @@ var Person = React.createClass({
     }
 })
 //属性存放着初始化不能在组件内部修改的数据
-var props = {
+var xxx = {
     name:'zfpx',
     gender:'女'
 }
+//把Person组件的render方法的返回值放到app元素的内容
 ReactDOM.render(
-    <Person name={10} />,
+    <Person {...xxx} />,
     document.querySelector('#app')
 );
 /*
