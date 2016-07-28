@@ -14,7 +14,7 @@ var Suggestion = React.createClass({
             success:function(data){
                 var result = data.s;
                 var lis = result.map(function(item){
-                    return <li>{item}</li>
+                    return <li className="list-group-item">{item}</li>
                 })
                 this.setState({content:lis});
             }
@@ -22,8 +22,8 @@ var Suggestion = React.createClass({
     },
     render(){
         return <div>
-            <input type="text" onChange={this.handleChange}/><br/>
-            <ul>
+            <input className="form-control" type="text" onChange={this.handleChange}/><br/>
+            <ul className="list-group">
                 {this.state.content}
             </ul>
         </div>
