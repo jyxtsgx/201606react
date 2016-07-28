@@ -24,6 +24,8 @@ var xxx = {
     name:'zfpx',
     gender:'女'
 }
+// this.props = {name:'zfpx',gender:'女'}
+// Object.assign(this.props,{gender:'男'});
 //把Person组件的render方法的返回值放到app元素的内容
 ReactDOM.render(
     <Person {...xxx} />,
