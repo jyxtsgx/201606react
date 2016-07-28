@@ -42,6 +42,9 @@ var MessageBox = React.createClass({
     },
     componentDidUpdate(){
         console.log('8. 组件已经更新=componentDidUpdate');
+    },
+    componentWillUnmount(){
+        console.log('9. 组件将要被删除=componentWillUnmount');
     }
 })
 
